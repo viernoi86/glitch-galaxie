@@ -1,0 +1,83 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #0f0f17;
+    color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+header {
+    background: #1c1c2a;
+    padding: 20px;
+    border-bottom: 2px solid #3a3a55;
+}
+
+.logo {
+    width: 100px;
+    border-radius: 50%;
+}
+
+nav {
+    background: #1a1a25;
+    padding: 10px 0;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu li {
+    margin: 10px 0;
+}
+
+.dropdown-btn {
+    background: #27273a;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    width: 200px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.dropdown-btn:hover {
+    background: #34345a;
+}
+
+.dropdown-content {
+    display: none;
+    list-style: none;
+    margin-top: 5px;
+    padding: 0;
+}
+
+.dropdown-content li a {
+    display: block;
+    text-decoration: none;
+    color: #d0d0ff;
+    background: #222233;
+    padding: 8px;
+    margin: 4px 0;
+    border-radius: 6px;
+    transition: background 0.3s;
+}
+
+.dropdown-content li a:hover {
+    background: #3b3b5f;
+}
+
+.intro {
+    padding: 40px;
+}
+
+footer {
+    margin-top: 40px;
+    background: #11111a;
+    padding: 10px;
+    font-size: 14px;
+    color: #aaa;
+}

@@ -29,13 +29,20 @@
                     <li><a href="arceux.html">Arceus-X</a></li>
                 </ul>
             </li>
+            <li>
+                <button class="dropdown-btn">Scripts ▾</button>
+                <ul class="dropdown-content">
+                    <li><a href="script.html">Tous les scripts</a></li>
+                    <li><a href="scriptenquestion.html">Script en question</a></li>
+                </ul>
+            </li>
         </ul>
     </nav>
 
     <main>
         <section class="intro">
-            <h2>Découvrez nos exécuteurs Roblox</h2>
-            <p>Sélectionnez un exécuteur pour plus d'informations et le télécharger.</p>
+            <h2>Découvrez nos exécuteurs et scripts Roblox</h2>
+            <p>Sélectionnez un exécuteur ou un script pour plus d'informations et le télécharger.</p>
         </section>
 
         <section class="executors">
@@ -68,6 +75,12 @@
                 <h3>Arceus-X (Mobile)</h3>
                 <a href="arceux.html" class="view-btn">Voir la page</a>
             </div>
+
+            <div class="executor-card">
+                <img src="script.png" alt="Script Executor">
+                <h3>Script Executor</h3>
+                <a href="script.html" class="view-btn">Voir la page</a>
+            </div>
         </section>
     </main>
 
@@ -75,14 +88,6 @@
         <p>© 2025 Serveur Discord — Tous droits réservés</p>
     </footer>
 
-    <script>
-        // Gère les menus déroulants
-        document.querySelectorAll('.dropdown-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const content = btn.nextElementSibling;
-                content.style.display = content.style.display === 'block' ? 'none' : 'block';
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

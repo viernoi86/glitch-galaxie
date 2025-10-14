@@ -83,39 +83,7 @@ footer {
     color: #aaa;
 }
 
-.download-btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 25px;
-    background: linear-gradient(135deg, #4a56e2, #7a5cff);
-    color: white;
-    border-radius: 10px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.download-btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 10px #7a5cff;
-}
-
-.back-btn {
-    display: inline-block;
-    margin-top: 40px;
-    padding: 10px 20px;
-    color: #ccc;
-    background: #222233;
-    text-decoration: none;
-    border-radius: 6px;
-    transition: background 0.2s;
-}
-
-.back-btn:hover {
-    background: #34345a;
-}
-
-/* --- Cartes exécuteurs / scripts --- */
+/* --- Cartes scripts/exécuteurs --- */
 .executors, .executor-info {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -148,10 +116,10 @@ footer {
     color: #d0d0ff;
 }
 
-.view-btn {
+.download-btn, .view-btn {
     display: inline-block;
     margin-top: 10px;
-    padding: 8px 16px;
+    padding: 10px 20px;
     background: linear-gradient(135deg, #4a56e2, #7a5cff);
     color: white;
     border-radius: 8px;
@@ -160,7 +128,7 @@ footer {
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.view-btn:hover {
+.download-btn:hover, .view-btn:hover {
     transform: scale(1.05);
     box-shadow: 0 0 10px #7a5cff;
 }
@@ -171,88 +139,101 @@ footer {
     margin: 20px 0;
 }
 
-/* --- Cartes code / copier --- */
-.code-container {
+.back-btn {
+    display: inline-block;
+    margin-top: 40px;
+    padding: 10px 20px;
+    color: #ccc;
     background: #222233;
-    border-radius: 10px;
-    padding: 10px;
-    margin-top: 10px;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background 0.2s;
+}
+
+.back-btn:hover {
+    background: #34345a;
+}
+
+/* --- Code container --- */
+.code-container {
     position: relative;
-    cursor: pointer;
+    background: #222233;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 15px;
     text-align: left;
-    overflow-x: auto;
 }
 
 .code-container pre {
     margin: 0;
-    color: #d0d0ff;
-    font-family: monospace;
-    font-size: 14px;
+    overflow-x: auto;
 }
 
 .copy-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    padding: 5px 10px;
-    background: #4a56e2;
-    color: white;
-    border: none;
-    border-radius: 6px;
+    margin-top: 10px;
+    padding: 8px 16px;
     cursor: pointer;
-    font-size: 12px;
-    transition: background 0.2s;
+    border: none;
+    background: linear-gradient(135deg, #4a56e2, #7a5cff);
+    color: white;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .copy-btn:hover {
-    background: #7a5cff;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #7a5cff;
 }
 
 .copy-tooltip {
     position: absolute;
-    top: -20px;
+    top: -25px;
     right: 10px;
-    background: #3333ff55;
-    color: white;
+    background: #4a56e2;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 6px;
     font-size: 12px;
-    padding: 2px 6px;
-    border-radius: 4px;
     opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.2s;
+    transition: opacity 0.3s;
 }
 
-.code-container.active .copy-tooltip {
-    opacity: 1;
-}
-
-/* --- Avatars développeurs PNG/GIF --- */
+/* --- Avatars développeurs ronds avec GIF superposé --- */
 .dev-avatar-container {
     position: relative;
     width: 100px;
-    height: 100px; /* fixe la taille pour alignement PNG/GIF */
+    height: 100px;
     margin: 0 auto 15px auto;
+    border-radius: 50%;
+    overflow: hidden;
 }
 
 .dev-avatar-container img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
     border-radius: 50%;
     display: block;
-    transition: opacity 0.3s;
 }
 
 .dev-avatar-container .dev-gif {
     position: absolute;
     top: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
     opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
 }
 
 .dev-avatar-container:hover .dev-gif {
-    opacity: 1;       /* Le GIF apparaît */
+    opacity: 1;
 }
 
 .dev-avatar-container:hover .dev-avatar {
-    opacity: 0;       /* La PNG disparaît */
+    opacity: 0.3; /* PNG devient translucide au hover */
 }

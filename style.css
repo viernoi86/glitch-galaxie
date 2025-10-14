@@ -1,4 +1,4 @@
-/* --- BASE --- */
+/* --- Global --- */
 body {
     font-family: 'Segoe UI', sans-serif;
     background: #0f0f17;
@@ -6,38 +6,22 @@ body {
     margin: 0;
     padding: 0;
     text-align: center;
-    opacity: 0;
-    animation: fadeIn 1s ease-in forwards;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* --- HEADER --- */
 header {
     background: #1c1c2a;
     padding: 20px;
     border-bottom: 2px solid #3a3a55;
-    box-shadow: 0 2px 10px #0005;
 }
 
 .logo {
     width: 100px;
     border-radius: 50%;
-    transition: transform 0.4s ease;
 }
 
-.logo:hover {
-    transform: rotate(10deg) scale(1.05);
-}
-
-/* --- NAVIGATION --- */
 nav {
     background: #1a1a25;
     padding: 10px 0;
-    box-shadow: 0 4px 8px #0005;
 }
 
 .menu {
@@ -58,26 +42,18 @@ nav {
     width: 200px;
     border-radius: 8px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: background 0.3s;
 }
 
 .dropdown-btn:hover {
     background: #34345a;
-    transform: scale(1.03);
 }
 
-/* --- DROPDOWN --- */
 .dropdown-content {
     display: none;
     list-style: none;
     margin-top: 5px;
     padding: 0;
-    animation: dropdownFade 0.4s ease;
-}
-
-@keyframes dropdownFade {
-    from { opacity: 0; transform: translateY(-5px); }
-    to { opacity: 1; transform: translateY(0); }
 }
 
 .dropdown-content li a {
@@ -88,79 +64,61 @@ nav {
     padding: 8px;
     margin: 4px 0;
     border-radius: 6px;
-    transition: all 0.3s ease;
+    transition: background 0.3s;
 }
 
 .dropdown-content li a:hover {
     background: #3b3b5f;
-    transform: scale(1.02);
 }
 
-/* --- INTRO --- */
+/* --- Intro --- */
 .intro {
     padding: 40px;
-    animation: fadeIn 1s ease-in forwards;
 }
 
-.intro h2 {
-    margin-bottom: 15px;
-}
-
-.intro p {
-    color: #ccc;
-    line-height: 1.6;
-}
-
-/* --- FOOTER --- */
+/* --- Footer --- */
 footer {
     margin-top: 40px;
     background: #11111a;
     padding: 10px;
     font-size: 14px;
     color: #aaa;
-    box-shadow: 0 -2px 10px #0005;
 }
 
-/* --- BOUTONS --- */
-.download-btn, .view-btn, .back-btn {
+/* --- Buttons --- */
+.download-btn {
     display: inline-block;
-    padding: 10px 25px;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: linear-gradient(135deg, #4a56e2, #7a5cff);
+    color: white;
     border-radius: 10px;
     text-decoration: none;
     font-weight: bold;
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.download-btn {
-    background: linear-gradient(135deg, #4a56e2, #7a5cff);
-    color: white;
-}
-
 .download-btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 12px #7a5cff;
-}
-
-.view-btn {
-    background: linear-gradient(135deg, #4a56e2, #7a5cff);
-    color: white;
-}
-
-.view-btn:hover {
     transform: scale(1.05);
     box-shadow: 0 0 10px #7a5cff;
 }
 
 .back-btn {
-    background: #222233;
+    display: inline-block;
+    margin-top: 40px;
+    padding: 10px 20px;
     color: #ccc;
+    background: #222233;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background 0.2s;
 }
 
 .back-btn:hover {
     background: #34345a;
 }
 
-/* --- EXECUTOR CARDS --- */
+/* --- Executor / Script Cards --- */
 .executors {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -173,13 +131,12 @@ footer {
     border-radius: 12px;
     padding: 15px;
     box-shadow: 0 0 10px #0004;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    animation: fadeIn 0.8s ease-in forwards;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .executor-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 18px #444;
+    transform: scale(1.03);
+    box-shadow: 0 0 15px #333;
 }
 
 .executor-card img {
@@ -187,12 +144,6 @@ footer {
     border-radius: 10px;
     height: 160px;
     object-fit: cover;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.executor-card img:hover {
-    transform: scale(1.03);
-    box-shadow: 0 0 12px #555;
 }
 
 .executor-card h3 {
@@ -200,42 +151,99 @@ footer {
     color: #d0d0ff;
 }
 
-/* --- EXECUTOR IMAGE ON PAGE --- */
+.view-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 16px;
+    background: linear-gradient(135deg, #4a56e2, #7a5cff);
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.view-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #7a5cff;
+}
+
+/* --- Executor Image --- */
 .executor-image {
     width: 300px;
     border-radius: 10px;
     margin: 20px 0;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.executor-image:hover {
-    transform: scale(1.03);
-    box-shadow: 0 0 12px #7a5cff;
+/* --- Code Container / Copier --- */
+.code-container {
+    background: #151520;
+    border-radius: 10px;
+    padding: 12px;
+    margin-top: 12px;
+    position: relative;
+    text-align: left;
+    box-shadow: 0 0 8px #0006;
+    transition: transform 0.22s ease, box-shadow 0.22s ease, border 0.2s ease;
+    border: 2px solid transparent; /* pour l'effet d'encadrement */
 }
 
-/* --- MEDIA QUERIES (RESPONSIVE) --- */
+.code-container.active {
+    border-color: rgba(122,92,255,0.9);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(122,92,255,0.12);
+}
+
+.code-container pre {
+    margin: 0;
+    padding: 6px 8px 36px 8px; /* espace pour bouton */
+    overflow-x: auto;
+    white-space: pre;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 13px;
+    color: #dbe6ff;
+    background: transparent;
+}
+
+.copy-btn {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    padding: 6px 10px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #4a56e2, #7a5cff);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 0 4px 14px rgba(74,86,226,0.18);
+    transition: transform 0.15s ease, opacity 0.15s ease;
+    opacity: 0.95;
+}
+
+.copy-btn:active { transform: scale(0.98); }
+
+.copy-tooltip {
+    position: absolute;
+    right: 12px;
+    bottom: 44px;
+    background: #12121a;
+    color: #9fd3ff;
+    padding: 6px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 0.18s ease, transform 0.18s ease;
+    pointer-events: none;
+}
+
+.copy-tooltip.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 @media (max-width: 768px) {
-    .executor-image {
-        width: 80%;
-    }
-
-    .executor-card {
-        padding: 10px;
-    }
-
-    .dropdown-btn {
-        width: 150px;
-        padding: 8px 15px;
-    }
-}
-
-@media (max-width: 480px) {
-    .executor-card h3 {
-        font-size: 16px;
-    }
-
-    .download-btn, .view-btn, .back-btn {
-        padding: 8px 20px;
-        font-size: 14px;
-    }
+    .code-container { padding: 10px; }
+    .copy-btn { right: 8px; bottom: 8px; padding: 6px 8px; }
 }

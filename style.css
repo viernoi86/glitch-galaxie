@@ -19,62 +19,6 @@ header {
     border-radius: 50%;
 }
 
-nav {
-    background: #1a1a25;
-    padding: 10px 0;
-}
-
-.menu {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.menu li {
-    margin: 10px 0;
-}
-
-.dropdown-btn {
-    background: #27273a;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    width: 200px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-.dropdown-btn:hover {
-    background: #34345a;
-}
-
-.dropdown-content {
-    display: none;
-    list-style: none;
-    margin-top: 5px;
-    padding: 0;
-}
-
-.dropdown-content li a {
-    display: block;
-    text-decoration: none;
-    color: #d0d0ff;
-    background: #222233;
-    padding: 8px;
-    margin: 4px 0;
-    border-radius: 6px;
-    transition: background 0.3s;
-}
-
-.dropdown-content li a:hover {
-    background: #3b3b5f;
-}
-
-.intro {
-    padding: 40px;
-}
-
 footer {
     margin-top: 40px;
     background: #11111a;
@@ -131,12 +75,6 @@ footer {
 .download-btn:hover, .view-btn:hover {
     transform: scale(1.05);
     box-shadow: 0 0 10px #7a5cff;
-}
-
-.executor-image {
-    width: 300px;
-    border-radius: 10px;
-    margin: 20px 0;
 }
 
 .back-btn {
@@ -209,12 +147,13 @@ footer {
     overflow: hidden;
 }
 
-.dev-avatar-container img {
+.dev-avatar-container .dev-avatar {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 50%;
-    display: block;
+    position: relative;
+    z-index: 1;
 }
 
 .dev-avatar-container .dev-gif {
@@ -228,12 +167,9 @@ footer {
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
     pointer-events: none;
+    z-index: 2;
 }
 
 .dev-avatar-container:hover .dev-gif {
-    opacity: 1;
-}
-
-.dev-avatar-container:hover .dev-avatar {
-    opacity: 0.3; /* PNG devient translucide au hover */
+    opacity: 0.8; /* GIF apparaît par-dessus le PNG */
 }

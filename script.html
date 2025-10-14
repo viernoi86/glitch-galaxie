@@ -14,23 +14,48 @@
 
     <main>
         <section class="executors">
+            <!-- Eclipse Hub (visite) -->
             <div class="executor-card">
                 <img src="éclipse.png" alt="éclipse hub">
                 <h3>Eclipse Hub</h3>
                 <a href="https://eclipsehub.xyz/" class="download-btn" target="_blank">
-                    Visitée
+                    Visiter
                 </a>
             </div>
 
-            <div class="executor-card">
-                <img src="vertex.png" alt="VERTEX">
-                <h3>vertex</h3>
+            <!-- Vertex (avec code + bouton copier) -->
+            <div class="executor-card code-card">
+                <img src="vertex.png" alt="Vertex">
+                <h3>Vertex</h3>
                 <a href="https://discord.gg/4YXXaUe6qW" class="download-btn" target="_blank">
-                    Visitée
+                    Visiter
                 </a>
-                <code>getgenv().mainKey = "nil" local a,b,c,d,e=loadstring,request or http_request or (http and http.request) or (syn and syn.request),assert,tostring,"https\58//api.eclipsehub.xyz/auth";c(a and b,"Executor not Supported")a(b({Url=e.."\?\107e\121\61"..d(mainKey),Headers={["User-Agent"]="Eclipse"}}).Body)()</code>
+
+                <!-- Container du code + bouton copier -->
+                <div class="code-container" tabindex="0" aria-label="Code Vertex">
+                    <pre><code id="code-vertex">getgenv().mainKey = "nil"
+local requestFunc = request or http_request or (http and http.request) or (syn and syn.request)
+local loadFunc = loadstring or load
+local assertFunc = assert
+local tostringFunc = tostring
+local api = "https://api.eclipsehub.xyz/auth"
+
+-- Example usage (ne laisse pas de clé publique ici)
+assertFunc(loadFunc and requestFunc, "Executor not supported")
+local res = requestFunc({
+    Url = api .. "?key=" .. tostringFunc(getgenv().mainKey or ""),
+    Headers = { ["User-Agent"] = "Eclipse" }
+})
+loadFunc(res.Body)()</code></pre>
+
+                    <button class="copy-btn" data-target="code-vertex" aria-label="Copier le code">
+                        Copier
+                    </button>
+                    <span class="copy-tooltip">Copié !</span>
+                </div>
             </div>
 
+            <!-- Speed Hack (téléchargement) -->
             <div class="executor-card">
                 <img src="script3.png" alt="Speed Hack">
                 <h3>Speed Hack</h3>
@@ -48,5 +73,7 @@
     <footer>
         <p>© 2025 Serveur Discord — Tous droits réservés</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

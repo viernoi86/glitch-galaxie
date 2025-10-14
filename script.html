@@ -5,6 +5,183 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Scripts Roblox - Serveur Discord</title>
 <link rel="stylesheet" href="style.css">
+<style>
+/* --- Base --- */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #0f0f17;
+    color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+header {
+    background: #1c1c2a;
+    padding: 20px;
+    border-bottom: 2px solid #3a3a55;
+}
+
+.logo {
+    width: 100px;
+    border-radius: 50%;
+}
+
+footer {
+    margin-top: 40px;
+    background: #11111a;
+    padding: 10px;
+    font-size: 14px;
+    color: #aaa;
+}
+
+/* --- Cartes scripts/exécuteurs --- */
+.executors, .executor-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 40px;
+}
+
+.executor-card {
+    background: #1c1c2a;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 0 10px #0004;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.executor-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 15px #333;
+}
+
+.executor-card img {
+    width: 100%;
+    border-radius: 10px;
+    height: 160px;
+    object-fit: cover;
+}
+
+.executor-card h3 {
+    margin-top: 10px;
+    color: #d0d0ff;
+}
+
+.download-btn, .view-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #4a56e2, #7a5cff);
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.download-btn:hover, .view-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #7a5cff;
+}
+
+.back-btn {
+    display: inline-block;
+    margin-top: 40px;
+    padding: 10px 20px;
+    color: #ccc;
+    background: #222233;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background 0.2s;
+}
+
+.back-btn:hover {
+    background: #34345a;
+}
+
+/* --- Code container --- */
+.code-container {
+    position: relative;
+    background: #222233;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 15px;
+    text-align: left;
+}
+
+.code-container pre {
+    margin: 0;
+    overflow-x: auto;
+}
+
+.copy-btn {
+    margin-top: 10px;
+    padding: 8px 16px;
+    cursor: pointer;
+    border: none;
+    background: linear-gradient(135deg, #4a56e2, #7a5cff);
+    color: white;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.copy-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #7a5cff;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: -25px;
+    right: 10px;
+    background: #4a56e2;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/* --- Avatars développeurs ronds avec GIF superposé --- */
+.dev-avatar-container {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 15px auto;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.dev-avatar-container .dev-avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    position: relative;
+    z-index: 1;
+}
+
+.dev-avatar-container .dev-gif {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.dev-avatar-container:hover .dev-gif {
+    opacity: 0.8; /* GIF apparaît par-dessus */
+}
+</style>
 </head>
 <body>
 <header>

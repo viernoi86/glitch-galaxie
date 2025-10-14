@@ -137,7 +137,7 @@ footer {
     transition: opacity 0.3s;
 }
 
-/* --- Avatars développeurs ronds avec GIF superposé --- */
+/* --- Avatars développeurs ronds avec GIF superposé et transition fluide --- */
 .dev-avatar-container {
     position: relative;
     width: 100px;
@@ -164,12 +164,12 @@ footer {
     height: 100%;
     object-fit: cover;
     border-radius: 50%;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
+    opacity: 0; /* GIF invisible par défaut */
+    transition: opacity 0.5s ease-in-out; /* apparition douce */
     pointer-events: none;
     z-index: 2;
 }
 
 .dev-avatar-container:hover .dev-gif {
-    opacity: 0.8; /* GIF apparaît par-dessus le PNG */
+    opacity: 0.8; /* GIF apparaît au hover avec transparence */
 }

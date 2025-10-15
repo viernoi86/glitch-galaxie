@@ -77,6 +77,7 @@ footer {
     box-shadow: 0 0 10px #7a5cff;
 }
 
+/* --- Bouton retour --- */
 .back-btn {
     display: inline-block;
     margin-top: 40px;
@@ -137,7 +138,7 @@ footer {
     transition: opacity 0.3s;
 }
 
-/* --- Avatars développeurs ronds avec GIF superposé et transition fluide --- */
+/* --- Avatars développeurs ronds avec GIF superposé --- */
 .dev-avatar-container {
     position: relative;
     width: 100px;
@@ -170,6 +171,18 @@ footer {
     z-index: 2;
 }
 
+/* GIF visible par-dessus sans supprimer l’image */
 .dev-avatar-container:hover .dev-gif {
-    opacity: 0.8; /* GIF apparaît au hover avec transparence */
+    opacity: 1; /* GIF visible au hover */
+}
+
+/* --- Animation optionnelle pour GIF --- */
+@keyframes avatarGlow {
+    0% { box-shadow: 0 0 0px #7a5cff; }
+    50% { box-shadow: 0 0 12px #7a5cff; }
+    100% { box-shadow: 0 0 0px #7a5cff; }
+}
+
+.dev-avatar-container:hover {
+    animation: avatarGlow 1.2s infinite;
 }

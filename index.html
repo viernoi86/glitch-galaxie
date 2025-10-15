@@ -1,93 +1,92 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil - Serveur Discord</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accueil - Serveur Discord</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <img src="logo.jpg" alt="Logo du serveur" class="logo">
-        <h1>Bienvenue sur le site du serveur Discord</h1>
-    </header>
+  <header>
+    <img src="logo.jpg" alt="Logo du serveur" class="logo">
+    <h1>Bienvenue sur le site du serveur Discord</h1>
+  </header>
 
-    <nav>
-        <ul class="menu">
-            <li>
-                <button class="dropdown-btn">Exécuteur PC ▾</button>
-                <ul class="dropdown-content">
-                    <li><a href="solara.html">Solara</a></li>
-                    <li><a href="xeno.html">Xeno</a></li>
-                    <li><a href="luna.html">Luna</a></li>
-                </ul>
-            </li>
-            <li>
-                <button class="dropdown-btn">Exécuteur Mobile ▾</button>
-                <ul class="dropdown-content">
-                    <li><a href="delta.html">Delta</a></li>
-                    <li><a href="arceux.html">Arceus-X</a></li>
-                </ul>
-            </li>
-            <li>
-                <button class="dropdown-btn">Scripts ▾</button>
-                <ul class="dropdown-content">
-                    <li><a href="script.html">Tous les scripts</a></li>
-                    <li><a href="scriptenquestion.html">Script en question</a></li>
-                </ul>
-            </li>
-        </ul>
-    </nav>
+  <main>
+    <section class="selectors">
+      <div class="dropdown">
+        <label for="executors-pc">Exécuteur PC :</label>
+        <select id="executors-pc" onchange="location = this.value;">
+          <option value="#">Sélectionner</option>
+          <option value="solara.html">Solara</option>
+          <option value="xeno.html">Xeno</option>
+          <option value="luna.html">Luna</option>
+        </select>
+      </div>
 
-    <main>
-        <section class="intro">
-            <h2>Découvrez nos exécuteurs et scripts Roblox</h2>
-            <p>Sélectionnez un exécuteur ou un script pour plus d'informations et le télécharger.</p>
-        </section>
+      <div class="dropdown">
+        <label for="executors-mobile">Exécuteur Mobile :</label>
+        <select id="executors-mobile" onchange="location = this.value;">
+          <option value="#">Sélectionner</option>
+          <option value="delta.html">Delta</option>
+          <option value="arceusx.html">Arceus-X</option>
+        </select>
+      </div>
 
-        <section class="executors">
-            <div class="executor-card">
-                <img src="solara.jpg" alt="Solara">
-                <h3>Solara (PC)</h3>
-                <a href="solara.html" class="view-btn">Voir la page</a>
-            </div>
+      <div class="dropdown">
+        <label for="scripts">Scripts :</label>
+        <select id="scripts" onchange="location = this.value;">
+          <option value="#">Sélectionner</option>
+          <option value="script.html">Tous les scripts</option>
+          <option value="scriptenquestion.html">Script en question</option>
+        </select>
+      </div>
+    </section>
 
-            <div class="executor-card">
-                <img src="xeno.png" alt="Xeno">
-                <h3>Xeno (PC)</h3>
-                <a href="xeno.html" class="view-btn">Voir la page</a>
-            </div>
+    <h2>Découvrez nos exécuteurs et scripts Roblox</h2>
+    <p>Sélectionnez un exécuteur ou un script pour plus d'informations et le télécharger.</p>
 
-            <div class="executor-card">
-                <img src="luna.png" alt="Luna">
-                <h3>Luna (PC)</h3>
-                <a href="luna.html" class="view-btn">Voir la page</a>
-            </div>
+    <section class="executors">
+      <div class="executor-card">
+        <img src="solara.jpg" alt="Solara">
+        <h3>Solara (PC)</h3>
+        <a href="solara.html" class="download-btn">Voir la page</a>
+      </div>
 
-            <div class="executor-card">
-                <img src="delta.jpg" alt="Delta">
-                <h3>Delta (Mobile)</h3>
-                <a href="delta.html" class="view-btn">Voir la page</a>
-            </div>
+      <div class="executor-card">
+        <img src="xeno.jpg" alt="Xeno">
+        <h3>Xeno (PC)</h3>
+        <a href="xeno.html" class="download-btn">Voir la page</a>
+      </div>
 
-            <div class="executor-card">
-                <img src="arceux.jpg" alt="Arceus-X">
-                <h3>Arceus-X (Mobile)</h3>
-                <a href="arceux.html" class="view-btn">Voir la page</a>
-            </div>
+      <div class="executor-card">
+        <img src="luna.jpg" alt="Luna">
+        <h3>Luna (PC)</h3>
+        <a href="luna.html" class="download-btn">Voir la page</a>
+      </div>
 
-            <div class="executor-card">
-                <img src="script.png" alt="Script">
-                <h3>Script </h3>
-                <a href="script.html" class="view-btn">Voir la page</a>
-            </div>
-        </section>
-    </main>
+      <div class="executor-card">
+        <img src="delta.jpg" alt="Delta">
+        <h3>Delta (Mobile)</h3>
+        <a href="delta.html" class="download-btn">Voir la page</a>
+      </div>
 
-    <footer>
-        <p>© 2025 Serveur Discord — Tous droits réservés</p>
-    </footer>
+      <div class="executor-card">
+        <img src="arceusx.jpg" alt="Arceus-X">
+        <h3>Arceus-X (Mobile)</h3>
+        <a href="arceusx.html" class="download-btn">Voir la page</a>
+      </div>
 
-    <script src="script.js"></script>
+      <div class="executor-card">
+        <img src="script.jpg" alt="Script">
+        <h3>Script</h3>
+        <a href="script.html" class="download-btn">Voir la page</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Serveur Discord — Tous droits réservés</p>
+  </footer>
 </body>
 </html>
